@@ -1,16 +1,21 @@
 const path = require("path");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    toDoClass: "./src/toDoClass.js",
+    toDoList: "./src/toDoList.js",
+    toDoProject: "./src/toDoProject.js",
+  },
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
   },
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {

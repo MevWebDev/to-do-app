@@ -18,4 +18,8 @@ toDoList.projects.forEach((project) => {
     console.log(todo.title);
   });
 });
+
+toDoList.addProject("Project X");
+
+toDoList.addProject("Project GYAAAT");
 generateNavbar(toDoList);

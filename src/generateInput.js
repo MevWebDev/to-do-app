@@ -1,7 +1,7 @@
 import { toDoList } from "./index.js";
 import { generateNavbar } from "./generateNavbar.js";
 
-export function addProject(list) {
+export function generateInput(list) {
   const addProjectButton = document.querySelector("#add-button");
   console.log(addProjectButton);
 
@@ -15,9 +15,20 @@ export function addProject(list) {
 
   const inputConfirmButton = document.createElement("button");
   inputConfirmButton.textContent = "Confirm";
+  inputConfirmButton.addEventListener("click", () => {
+    const projectName = inputField.value;
+    if (projectName) {
+      list.addProject(projectName);
+    }
+
+    generateNavbar(list);
+  });
 
   const inputCancelButton = document.createElement("button");
   inputCancelButton.textContent = "Cancel";
+  inputCancelButton.addEventListener("click", () => {
+    input.replaceWith(addProjectButton);
+  });
 
   input.appendChild(inputField);
   buttonWrapper.appendChild(inputConfirmButton);

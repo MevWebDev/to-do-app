@@ -1,4 +1,5 @@
-import { addProject } from "./addProject";
+import { generateInput } from "./generateInput";
+import { generateProjects } from "./generateProjects";
 export function generateNavbar(toDoList) {
   const projectsDiv = document.querySelector("#projects");
   projectsDiv.innerHTML = "";
@@ -6,13 +7,7 @@ export function generateNavbar(toDoList) {
   addProjectButton.id = "add-button";
   addProjectButton.classList = "project";
   addProjectButton.textContent = "+ Add Project";
-  addProjectButton.addEventListener("click", () => addProject(toDoList));
+  addProjectButton.addEventListener("click", () => generateInput(toDoList));
   projectsDiv.appendChild(addProjectButton);
-
-  toDoList.projects.forEach((project) => {
-    const projectDiv = document.createElement("button");
-    projectDiv.classList = "project";
-    projectDiv.textContent = project.name;
-    projectsDiv.appendChild(projectDiv);
-  });
+  generateProjects();
 }

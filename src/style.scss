@@ -14,14 +14,14 @@ body {
 
   #app {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     width: 100%;
     height: 100%;
     background-color: yellow;
     header {
       background-color: $background-color-header;
-      grid-area: 1/ 1/ 2/ 9;
+      grid-area: 1/ 1/ 2/ 13;
       color: white;
       display: flex;
       align-items: center;
@@ -29,33 +29,19 @@ body {
       padding-left: 2rem;
     }
     nav {
-      grid-area: 2 / 1 / 9 / 2;
+      grid-area: 2 / 1 / 13 / 3;
       background-color: $background-color-nav;
       font-weight: bold;
       padding: 1rem;
       font-size: 1.5rem;
+      #projects-header {
+        padding-left: 0.5rem;
+      }
       #projects {
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        #input-field {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          gap: 0.5rem;
-          input {
-            width: 100%;
-          }
-          #button-wrapper {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-          }
-        }
 
         .project {
           width: 80%;
@@ -70,15 +56,140 @@ body {
         .project:hover {
           background-color: #cccccc;
         }
+        .active {
+          background-color: #cccccc;
+        }
       }
     }
 
     main {
       background-color: $background-color-app;
-      grid-area: 2 / 2 / 9 / 9;
+      grid-area: 2 / 3 / 13 / 13;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+
+      .main-wrapper {
+        padding: 0.5rem 1rem;
+        button {
+          border: 0;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+
+      button:hover {
+        background-color: #cccccc;
+      }
     }
+  }
+}
+#input-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  input {
+    align-self: center;
+    box-sizing: border-box;
+    border: 1px solid lighten(rgb(56, 56, 56), 30%);
+    border-radius: 0.2rem;
+    width: 90%;
+    padding: 1rem;
+  }
+  #button-wrapper {
+    align-self: center;
+    gap: 1rem;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    button {
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 0.2rem;
+      cursor: pointer;
+      min-width: fit-content;
+      flex: 1;
+      font-weight: 800;
+    }
+    :nth-child(1) {
+      border: 1px solid darken($button-green, 10%);
+      background-color: $button-green;
+    }
+    :nth-child(2) {
+      border: 1px solid darken($button-red, 10%);
+      background-color: $button-red;
+    }
+  }
+}
+
+.popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup {
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  border-radius: 1rem;
+  gap: 1.5rem;
+  h2,
+  h3 {
+    margin: 0;
+  }
+  form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    * {
+      padding: 1rem;
+    }
+  }
+}
+.popup-button {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+}
+#todo-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    width: 200px;
+    height: 250px;
+    border-radius: 0.5rem;
   }
 }

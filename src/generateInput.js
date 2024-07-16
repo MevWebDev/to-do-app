@@ -1,6 +1,6 @@
 import { toDoList } from "./index.js";
 import { generateNavbar } from "./generateNavbar.js";
-
+import { saveData } from "./webstorage.js";
 export function generateInput(list) {
   const addProjectButton = document.querySelector("#add-button");
   console.log(addProjectButton);
@@ -19,6 +19,7 @@ export function generateInput(list) {
     const projectName = inputField.value;
     if (projectName) {
       list.addProject(projectName);
+      saveData();
     }
 
     generateNavbar(list);

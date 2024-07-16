@@ -5,9 +5,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/index.js",
-    toDoClass: "./src/toDoClass.js",
-    toDoList: "./src/toDoList.js",
-    toDoProject: "./src/toDoProject.js",
+    // toDoClass: "./src/toDoClass.js",
+    // toDoList: "./src/toDoList.js",
+    // toDoProject: "./src/toDoProject.js",
   },
   mode: "development",
   devtool: "inline-source-map",

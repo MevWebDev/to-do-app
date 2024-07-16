@@ -1,6 +1,8 @@
 import { state } from "./index.js";
-const todoList = document.querySelector("#todo-list");
+
 export function generateTodos() {
+  const todoList = document.querySelector("#todo-list");
+  console.log("Loading todos");
   todoList.innerHTML = "";
   state.currentProject.todos.forEach((todo) => {
     let borderColor;

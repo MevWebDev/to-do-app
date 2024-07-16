@@ -3,9 +3,9 @@ import { state } from "./index";
 import { generateTodos } from "./generateTodos";
 export function generateProjects() {
   const projectsDiv = document.querySelector("#projects");
-  toDoList.projects.forEach((project) => {
+  toDoList.projects.forEach((project, index) => {
     const projectDiv = document.createElement("button");
-    if (toDoList.projects.length == 1) {
+    if (index == 0) {
       projectDiv.classList = "project active";
     } else projectDiv.classList = "project";
     projectDiv.textContent = project.name;

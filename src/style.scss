@@ -38,6 +38,9 @@ body {
         padding-left: 0.5rem;
       }
       #projects {
+        button:hover {
+          background-color: #cccccc;
+        }
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
@@ -67,6 +70,9 @@ body {
       grid-area: 2 / 3 / 13 / 13;
       display: flex;
       flex-direction: column;
+      .add-todo:hover {
+        background-color: #cccccc;
+      }
 
       .main-wrapper {
         padding: 0.5rem 1rem;
@@ -76,10 +82,6 @@ body {
           font-size: 1rem;
           font-weight: 600;
         }
-      }
-
-      button:hover {
-        background-color: #cccccc;
       }
     }
   }
@@ -184,12 +186,40 @@ body {
   justify-content: flex-start;
   padding: 2.5rem;
   div {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 1rem;
     width: 200px;
     height: 250px;
+    border-radius: 0.5rem;
+
+    .delete-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding: 1rem;
+      border: none;
+      color: red;
+    }
+    .delete-button:hover {
+      transform: scale(1.1);
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.delete-popup {
+  font-size: larger;
+  :nth-child(3) {
+    padding: 1rem 3rem;
+    border: 1.5px solid black;
     border-radius: 0.5rem;
   }
 }

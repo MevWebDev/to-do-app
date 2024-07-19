@@ -6,17 +6,16 @@ import { generateNavbar } from "./generateNavbar.js";
 import { generatePopup } from "./generatePopup.js";
 import { generateTodos } from "./generateTodos.js";
 import { loadStorage } from "./webstorage.js";
+import { generateProjects } from "./generateProjects.js";
 export const toDoList = new ToDoList();
 
-console.log(toDoList);
 loadStorage();
 generateNavbar(toDoList);
-
+generateProjects(toDoList);
 export const state = {
   currentProject: toDoList.projects[0],
 };
 generateTodos();
-console.log(state);
 
 const addToDoButton = document.querySelector(".add-todo");
 addToDoButton.addEventListener("click", generatePopup);

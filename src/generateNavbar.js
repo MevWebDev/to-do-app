@@ -9,5 +9,4 @@ export function generateNavbar(toDoList) {
   addProjectButton.textContent = "+ Add Project";
   addProjectButton.addEventListener("click", () => generateInput(toDoList));
   projectsDiv.appendChild(addProjectButton);
-  generateProjects();
 }

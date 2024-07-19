@@ -4,7 +4,7 @@ import { deletePopup } from "./deletePopup.js";
 import { updateTodoPopup } from "./editTodo.js";
 export function generateTodos() {
   const todoList = document.querySelector("#todo-list");
-  console.log("Loading todos");
+
   todoList.innerHTML = "";
   state.currentProject.todos.forEach((todo) => {
     let borderColor;
@@ -21,7 +21,7 @@ export function generateTodos() {
       default:
         borderColor = "black";
     }
-    console.log(todo);
+
     const todoDiv = document.createElement("div");
 
     const todoTitle = document.createElement("h3");
@@ -63,7 +63,6 @@ export function generateTodos() {
     finishedButton.classList = "todo-button finished-button";
     finishedButton.innerHTML = '<i class="gg-check"></i>';
     finishedButton.addEventListener("click", () => {
-      console.log("Franiolo");
       finishTodo(todo);
     });
     todoDiv.appendChild(finishedButton);

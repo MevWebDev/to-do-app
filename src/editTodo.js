@@ -1,7 +1,14 @@
-import { addToDo } from "./addTodo";
-import { generateTodos } from "./generateTodos";
-import { state } from "./index";
-export function generatePopup() {
+import { ToDo } from "./toDoClass";
+import { state } from "./index.js";
+import { generateTodos } from "./generateTodos.js";
+export function updateTodo(todo, title, description, dueDate, priority) {
+  todo.title = title;
+  todo.description = description;
+  todo.dueDate = dueDate;
+  todo.priority = priority;
+  generateTodos();
+}
+export function updateTodoPopup(todo) {
   const popupBackground = document.createElement("div");
   const popup = document.createElement("div");
   const popupTitle = document.createElement("h2");
@@ -10,13 +17,14 @@ export function generatePopup() {
   const titleInput = document.createElement("input");
   titleInput.type = "text";
   titleInput.name = "title";
-  titleInput.placeholder = "Title (max 30 characters)";
+  titleInput.value = `${todo.title}`;
   form.appendChild(titleInput);
 
   // Create input for description
   const descriptionInput = document.createElement("input");
   descriptionInput.type = "text";
   descriptionInput.name = "description";
+  descriptionInput.value = `${todo.description}`;
   descriptionInput.placeholder = "Description (optional & max 24 characters)";
   form.appendChild(descriptionInput);
 
@@ -24,6 +32,7 @@ export function generatePopup() {
   const dueDateInput = document.createElement("input");
   dueDateInput.type = "date";
   dueDateInput.name = "dueDate";
+  dueDateInput.value = `${todo.dueDate}`;
   form.appendChild(dueDateInput);
 
   // Create select for priority
@@ -36,16 +45,17 @@ export function generatePopup() {
     option.text = priority;
     prioritySelect.appendChild(option);
   });
+  prioritySelect.value = `${todo.priority}`;
   form.appendChild(prioritySelect);
 
   // Create submit button
   const submitButton = document.createElement("input");
   submitButton.type = "submit";
-  submitButton.value = "Add To-Do";
-  submitButton.addEventListener("click", (event) => {
+  submitButton.value = "Edit To-Do";
+  submitButton.addEventListener("click", () => {
     event.preventDefault();
-    let currentDate = new Date();
     let dueDate = new Date(dueDateInput.value);
+    let currentDate = new Date();
     if (dueDate < currentDate) {
       alert("Don't go back to the future!");
     } else if (titleInput.value.length > 30) {
@@ -53,7 +63,8 @@ export function generatePopup() {
     } else if (descriptionInput.value.length > 24) {
       alert("Description must be 24 characters or less!");
     } else {
-      addToDo(
+      updateTodo(
+        todo,
         titleInput.value,
         descriptionInput.value,
         dueDateInput.value,
@@ -70,7 +81,7 @@ export function generatePopup() {
   const popupButton = document.createElement("button");
   popupBackground.classList = "popup-background";
   popup.classList = "popup";
-  popupTitle.textContent = "Add To-Do";
+  popupTitle.textContent = "Edit To-Do";
   popupSubtitle.textContent = `${state.currentProject.name}`;
 
   popupButton.textContent = "x";

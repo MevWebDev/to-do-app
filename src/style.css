@@ -1,0 +1,222 @@
+body {
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+body #app {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+}
+body #app header {
+  background-color: #343434;
+  grid-area: 1/1/2/13;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+body #app nav {
+  grid-area: 2/1/13/3;
+  background-color: #dddddd;
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+body #app nav #projects-header {
+  padding-left: 0.5rem;
+}
+body #app nav #projects {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body #app nav #projects button:hover {
+  background-color: #cccccc;
+}
+body #app nav #projects .project {
+  width: 80%;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+body #app nav #projects .project:hover {
+  background-color: #cccccc;
+}
+body #app nav #projects .active {
+  background-color: #cccccc;
+}
+body #app main {
+  background-color: #eeeeee;
+  grid-area: 2/3/13/13;
+  display: flex;
+  flex-direction: column;
+}
+body #app main .add-todo:hover {
+  background-color: #cccccc;
+}
+body #app main .main-wrapper {
+  padding: 0.5rem 1rem;
+}
+body #app main .main-wrapper button {
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#input-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+#input-field input {
+  align-self: center;
+  box-sizing: border-box;
+  border: 1px solid #858585;
+  border-radius: 0.2rem;
+  width: 90%;
+  padding: 1rem;
+}
+#input-field #button-wrapper {
+  align-self: center;
+  gap: 1rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#input-field #button-wrapper button {
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  flex: 1;
+  font-weight: 800;
+}
+#input-field #button-wrapper :nth-child(1) {
+  border: 1px solid #77ff77;
+  background-color: #aaffaa;
+}
+#input-field #button-wrapper :nth-child(2) {
+  border: 1px solid #ff8b8b;
+  background-color: #ffbebe;
+}
+
+.popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  border-radius: 1rem;
+  gap: 1.5rem;
+}
+.popup h2,
+.popup h3 {
+  margin: 0;
+}
+.popup form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.popup form * {
+  padding: 1rem;
+}
+
+.popup-button {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+}
+
+#todo-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2.5rem;
+}
+#todo-list div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  width: 200px;
+  height: 250px;
+  border-radius: 0.5rem;
+}
+#todo-list div .delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 1rem;
+  border: none;
+  color: red;
+}
+#todo-list div .delete-button:hover {
+  transform: scale(1.1);
+}
+#todo-list div div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-popup {
+  font-size: larger;
+}
+.delete-popup :nth-child(3) {
+  padding: 1rem 3rem;
+  border: 1.5px solid black;
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=style.css.map */

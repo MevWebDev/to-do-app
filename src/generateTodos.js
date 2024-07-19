@@ -1,6 +1,7 @@
 import { state } from "./index.js";
 import { finishTodo } from "./todoManagement.js";
 import { deletePopup } from "./deletePopup.js";
+import { updateTodoPopup } from "./editTodo.js";
 export function generateTodos() {
   const todoList = document.querySelector("#todo-list");
   console.log("Loading todos");
@@ -27,11 +28,11 @@ export function generateTodos() {
     todoTitle.textContent = todo.title;
     todoDiv.appendChild(todoTitle);
 
-    if (todo.description) {
-      const todoDesc = document.createElement("p");
-      todoDesc.textContent = todo.description;
-      todoDiv.appendChild(todoDesc);
-    }
+    // if (todo.description) {
+    const todoDesc = document.createElement("p");
+    todoDesc.textContent = todo.description;
+    todoDiv.appendChild(todoDesc);
+    // }
 
     const todoDate = document.createElement("p");
     todoDate.textContent = todo.dueDate;
@@ -40,16 +41,18 @@ export function generateTodos() {
 
     todoDiv.appendChild(todoDate);
 
-    const bottomButtons = document.createElement("div");
-
     const editButton = document.createElement("button");
-    editButton.classList = "todo-button";
-    editButton.textContent = "edit";
-    bottomButtons.appendChild(editButton);
+    editButton.classList = "todo-button edit-button";
+    editButton.innerHTML =
+      '<i class="fa fa-edit" style="font-size:1.5rem;"></i>';
+
+    editButton.addEventListener("click", () => updateTodoPopup(todo));
+
+    todoDiv.appendChild(editButton);
 
     const deleteButton = document.createElement("button");
     deleteButton.classList = "todo-button delete-button";
-    deleteButton.innerHTML = `<i class="gg-trash"></i>`;
+    deleteButton.innerHTML = `<i class="fa fa-trash-o" style="font-size:1.5rem;"></i>`;
     deleteButton.addEventListener("click", () => {
       deletePopup(todo);
     });
@@ -57,15 +60,13 @@ export function generateTodos() {
     todoDiv.appendChild(deleteButton);
 
     const finishedButton = document.createElement("button");
-    finishedButton.classList = "todo-button";
-    finishedButton.textContent = "finished";
+    finishedButton.classList = "todo-button finished-button";
+    finishedButton.innerHTML = '<i class="gg-check"></i>';
     finishedButton.addEventListener("click", () => {
       console.log("Franiolo");
       finishTodo(todo);
     });
-    bottomButtons.appendChild(finishedButton);
-
-    todoDiv.appendChild(bottomButtons);
+    todoDiv.appendChild(finishedButton);
 
     todoList.appendChild(todoDiv);
   });

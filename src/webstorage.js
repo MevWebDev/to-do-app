@@ -12,7 +12,7 @@ export function loadStorage() {
   let storedData = localStorage.getItem("toDoList");
   if (storedData) {
     let parsedData = JSON.parse(storedData);
-
+    toDoList.activityLog = parsedData.activityLog;
     toDoList.projects = parsedData.projects.map((project) => {
       let newProject = new Project(project.name, project.todos);
       newProject.todos = project.todos.map(

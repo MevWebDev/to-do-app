@@ -3,7 +3,6 @@ import { generateNavbar } from "./generateNavbar.js";
 import { saveData } from "./webstorage.js";
 export function generateInput(list) {
   const addProjectButton = document.querySelector("#add-button");
-  console.log(addProjectButton);
 
   const input = document.createElement("div");
   input.id = "input-field";

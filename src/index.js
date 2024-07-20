@@ -5,8 +5,9 @@ import { ToDo } from "./toDoClass.js";
 import { generateNavbar } from "./generateNavbar.js";
 import { generatePopup } from "./generatePopup.js";
 import { generateTodos } from "./generateTodos.js";
-import { loadStorage } from "./webstorage.js";
+import { loadStorage, saveData } from "./webstorage.js";
 import { generateProjects } from "./generateProjects.js";
+import { generateActivityLog } from "./activitylog.js";
 export const toDoList = new ToDoList();
 
 loadStorage();
@@ -19,3 +20,10 @@ generateTodos();
 
 const addToDoButton = document.querySelector(".add-todo");
 addToDoButton.addEventListener("click", generatePopup);
+
+const activityLog = document.querySelector(".activity-log-button");
+activityLog.addEventListener("click", () => {
+  console.log("activity log clicked");
+  generateActivityLog();
+});
+saveData();

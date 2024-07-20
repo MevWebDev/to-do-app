@@ -1,6 +1,7 @@
 import { toDoList } from "./index.js";
 import { generateNavbar } from "./generateNavbar.js";
 import { saveData } from "./webstorage.js";
+import { generateProjects } from "./generateProjects.js";
 export function generateInput(list) {
   const addProjectButton = document.querySelector("#add-button");
 
@@ -20,8 +21,8 @@ export function generateInput(list) {
       list.addProject(projectName);
       saveData();
     }
-
     generateNavbar(list);
+    generateProjects();
   });
 
   const inputCancelButton = document.createElement("button");

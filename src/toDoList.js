@@ -8,7 +8,7 @@ export class ToDoList {
   addProject(name) {
     this.projects.push(new Project(name));
   }
-  addActivityLog(message) {
-    this.activityLog.push(message);
+  addActivityLog(message, time) {
+    this.activityLog.push([message, time]);
   }
 }

@@ -3,7 +3,8 @@ import { state } from "./index";
 import { saveData } from "./webstorage";
 import { toDoList } from "./index";
 export function finishTodo(finishedTodo) {
-  toDoList.addActivityLog(finishedTodo);
+  const currentTime = new Date().toLocaleString();
+  toDoList.addActivityLog(finishedTodo, currentTime);
   state.currentProject.todos = state.currentProject.todos.filter((todo) => {
     return todo != finishedTodo;
   });

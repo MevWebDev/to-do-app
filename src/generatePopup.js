@@ -45,7 +45,9 @@ export function generatePopup() {
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     let currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
     let dueDate = new Date(dueDateInput.value);
+    dueDate.setHours(0, 0, 0, 0);
     if (dueDate < currentDate) {
       alert("Don't go back to the future!");
     } else if (titleInput.value.length > 30) {

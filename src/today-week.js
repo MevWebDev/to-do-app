@@ -3,6 +3,7 @@ import { state } from "./index.js";
 import { finishTodo } from "./todoManagement.js";
 import { deletePopup } from "./deletePopup.js";
 import { updateTodoPopup } from "./editTodo.js";
+const addTodoButton = document.querySelector(".add-todo");
 
 export function generateToday() {
   const todayTodos = [];
@@ -42,6 +43,7 @@ export function generateWeek() {
 }
 
 function generateTodos2(list) {
+  addTodoButton.style.display = "none";
   const todoList = document.querySelector("#todo-list");
   todoList.innerHTML = "";
   list.forEach((todo) => {

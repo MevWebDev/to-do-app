@@ -3,7 +3,8 @@ import { state } from "./index";
 import { generateTodos } from "./generateTodos";
 import { deleteProject } from "./projectManagement";
 import { generateNavbar } from "./generateNavbar";
-
+const addTodoButton = document.querySelector(".add-todo");
+console.log(addTodoButton);
 export function generateProjects() {
   const projectsDiv = document.querySelector("#projects");
   projectsDiv.innerHTML = "";
@@ -37,6 +38,7 @@ export function generateProjects() {
 
     projectsDiv.appendChild(projectDiv);
     projectDiv.addEventListener("click", () => {
+      addTodoButton.style.display = "block";
       projectsDiv.childNodes.forEach((node) => {
         node.classList.remove("active");
       });

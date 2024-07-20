@@ -23,7 +23,6 @@ addToDoButton.addEventListener("click", generatePopup);
 
 const activityLog = document.querySelector(".activity-log-button");
 activityLog.addEventListener("click", () => {
-  console.log("activity log clicked");
   generateActivityLog();
 });
 saveData();

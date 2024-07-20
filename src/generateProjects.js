@@ -29,7 +29,6 @@ export function generateProjects() {
 
     projectsDiv.appendChild(projectDiv);
     projectDiv.addEventListener("click", () => {
-      console.log("clicked");
       projectsDiv.childNodes.forEach((node) => {
         node.classList.remove("active");
       });
@@ -39,7 +38,6 @@ export function generateProjects() {
         (projectName) => project.name === projectName.name
       );
       generateTodos();
-      console.log(state.currentProject);
     });
 
     projectsDelete.addEventListener("click", (event) => {

@@ -5,7 +5,6 @@ import { ToDo } from "./toDoClass.js";
 import { Project } from "./toDoProject.js";
 export function saveData() {
   localStorage.setItem("toDoList", JSON.stringify(toDoList));
-  console.log("saved data");
 }
 
 export function loadStorage() {

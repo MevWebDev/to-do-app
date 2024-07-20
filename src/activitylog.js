@@ -42,7 +42,6 @@ export function generateActivityLog() {
 function generateActivities() {
   let borderColor;
 
-  console.log(toDoList.activityLog);
   const log = document.querySelector(".activity-log");
   log.innerHTML = "";
   toDoList.activityLog.forEach((activity) => {

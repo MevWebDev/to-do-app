@@ -16,13 +16,23 @@ export function generateNavbar(toDoList) {
   todayButton.innerHTML = `<div><i class="fas fa-calendar-day"></i>Today</div>`;
   todayButton.addEventListener("click", () => {
     generateToday();
+    projectsDiv.childNodes.forEach((node) => {
+      node.classList.remove("active");
+    });
+    todayButton.classList.add("active");
   });
   projectsDiv.appendChild(todayButton);
   const weekButton = document.createElement("button");
+
   weekButton.id = "week-button";
   weekButton.classList = "project";
   weekButton.innerHTML = `<div><i class="fas fa-calendar-week"></i>Week</div>`;
   weekButton.addEventListener("click", () => {
+    projectsDiv.childNodes.forEach((node) => {
+      node.classList.remove("active");
+    });
+    weekButton.classList.add("active");
+
     generateWeek();
   });
   projectsDiv.appendChild(weekButton);

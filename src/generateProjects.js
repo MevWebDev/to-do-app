@@ -5,7 +5,6 @@ import { deleteProject } from "./projectManagement";
 import { generateNavbar } from "./generateNavbar";
 
 export function generateProjects() {
-  console.log("All good");
   const projectsDiv = document.querySelector("#projects");
   projectsDiv.innerHTML = "";
   generateNavbar(toDoList);
@@ -14,7 +13,6 @@ export function generateProjects() {
     projectDiv.textContent = project.name; // Set textContent here
 
     if (index > 0) {
-      console.log("index", index);
       const projectsDelete = document.createElement("button");
       projectsDelete.style.opacity = "0%";
       projectsDelete.classList = "project-delete-button";

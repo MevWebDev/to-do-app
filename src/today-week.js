@@ -13,7 +13,7 @@ export function generateToday() {
     });
     todayTodos.push(todos);
   });
-  console.log(todayTodos);
+
   const todayTodosFlat = todayTodos.flat();
   generateTodos2(todayTodosFlat);
 }
@@ -45,7 +45,6 @@ function generateTodos2(list) {
   const todoList = document.querySelector("#todo-list");
   todoList.innerHTML = "";
   list.forEach((todo) => {
-    console.log(todo);
     let borderColor;
     switch (todo.priority) {
       case "low":

@@ -50,6 +50,7 @@ body {
         gap: 1rem;
 
         .project {
+          cursor: pointer;
           height: 30;
           width: 80%;
           padding: 1rem;
@@ -71,10 +72,14 @@ body {
           button {
             border: none;
             background-color: transparent;
+
             cursor: pointer;
             .active {
               background-color: #cccccc;
             }
+          }
+          button:hover {
+            transform: translateY(-1px);
           }
         }
         .project:hover {

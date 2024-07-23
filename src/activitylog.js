@@ -26,6 +26,7 @@ export function generateActivityLog() {
   popup.appendChild(log);
 
   const button = document.createElement("button");
+  button.classList = "submit-button";
   popup.appendChild(button);
   button.textContent = "Clear";
   button.style.marginTop = "auto";

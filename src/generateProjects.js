@@ -12,13 +12,13 @@ export function generateProjects() {
   toDoList.projects.forEach((project, index) => {
     const projectDiv = document.createElement("div");
     projectDiv.textContent = project.name; // Set textContent here
-
+    const projectsDelete = document.createElement("button");
+    projectsDelete.style.opacity = "0%";
+    projectsDelete.classList = "project-delete-button";
+    projectsDelete.innerHTML = `<i class="fa fa-trash-o" style="font-size:1.25rem;"></i>`;
+    projectDiv.appendChild(projectsDelete);
     if (index > 0) {
-      const projectsDelete = document.createElement("button");
-      projectsDelete.style.opacity = "0%";
-      projectsDelete.classList = "project-delete-button";
-      projectsDelete.innerHTML = `<i class="fa fa-trash-o" style="font-size:1.25rem;"></i>`;
-      projectDiv.appendChild(projectsDelete); // Append the delete button after setting textContent
+      // Append the delete button after setting textContent
 
       projectDiv.addEventListener("mouseover", () => {
         projectsDelete.style.opacity = "100%";

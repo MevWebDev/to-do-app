@@ -15,8 +15,30 @@ body {
   line-height: 1.5;
   button {
     cursor: pointer;
+    color: black;
   }
-
+  input,
+  textarea,
+  select {
+    font-size: 16px; // Prevent zoom on focus in Safari
+  }
+  input,
+  select {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  input[type="submit"] {
+    border: 1px solid black;
+  }
+  input[type="submit"]:hover {
+    border: 1px solid black;
+    color: #ccc;
+    background-color: #333;
+  }
   #app {
     background-color: $background-color-app;
     display: flex;
@@ -216,6 +238,14 @@ body {
   height: 600px;
   border-radius: 1rem;
   gap: 1.5rem;
+  button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+  }
   @media (max-width: 600px) {
     width: 400px;
     height: 400px;
@@ -246,7 +276,7 @@ body {
   position: absolute;
   right: 10px;
   top: 10px;
-  border: none;
+  border: 0;
   font-size: 1.5rem;
   background-color: transparent;
   color: black;

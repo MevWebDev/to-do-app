@@ -11,7 +11,6 @@ export function checkDates() {
       return today < new Date(todo.dueDate);
     });
     expiredTodos.forEach((todo) => {
-      // Check that todo is defined and has a priority property
       toDoList.addActivityLog(todo, todo.dueDate.toLocaleString(), `expired`);
     });
   });

@@ -9,6 +9,7 @@ export function deletePopup(deletedTodo) {
   subtitle.textContent = "Deleting todo is irreversable";
 
   const quit = document.createElement("button");
+
   quit.textContent = "x";
   quit.addEventListener("click", () => {
     popupBackground.remove();
@@ -16,6 +17,7 @@ export function deletePopup(deletedTodo) {
 
   const button = document.createElement("button");
   button.textContent = "Yes";
+  button.classList = "submit-button";
   button.addEventListener("click", () => {
     deleteTodo(deletedTodo);
     popupBackground.remove();

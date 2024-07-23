@@ -24,6 +24,7 @@ export function generatePopup() {
   const dueDateInput = document.createElement("input");
   dueDateInput.type = "date";
   dueDateInput.name = "dueDate";
+  dueDateInput.placeholder = "dd.mm.rrrr";
   form.appendChild(dueDateInput);
 
   // Create select for priority
@@ -40,6 +41,7 @@ export function generatePopup() {
 
   // Create submit button
   const submitButton = document.createElement("input");
+
   submitButton.type = "submit";
   submitButton.value = "Add To-Do";
   submitButton.addEventListener("click", (event) => {

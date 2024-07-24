@@ -45,7 +45,7 @@ function generateActivities() {
 
   const log = document.querySelector(".activity-log");
   log.innerHTML = "";
-  toDoList.activityLog.forEach((activity) => {
+  toDoList.activityLog.reverse().forEach((activity) => {
     switch (activity[0].priority) {
       case "low":
         borderColor = "green";

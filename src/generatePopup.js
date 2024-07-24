@@ -56,6 +56,8 @@ export function generatePopup() {
       alert("Title must be 30 characters or less!");
     } else if (descriptionInput.value.length > 24) {
       alert("Description must be 24 characters or less!");
+    } else if (titleInput.value == "" || dueDateInput.value == "") {
+      alert("Title and due date are required!");
     } else {
       addToDo(
         titleInput.value,

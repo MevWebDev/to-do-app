@@ -5,9 +5,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/index.js",
-    // toDoClass: "./src/toDoClass.js",
-    // toDoList: "./src/toDoList.js",
-    // toDoProject: "./src/toDoProject.js",
   },
   mode: "development",
   devtool: "inline-source-map",
@@ -30,6 +27,16 @@ module.exports = {
           // Compiles Sass to CSS
           "sass-loader",
         ],
+      },
+      {
+        test: /\.(?:js|mjs|cjs)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-env", { targets: "defaults" }]],
+          },
+        },
       },
     ],
   },

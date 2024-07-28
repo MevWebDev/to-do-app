@@ -2,6 +2,7 @@ import { toDoList } from "./index";
 
 export function checkDates() {
   const today = new Date();
+  today.setHours(0, 0, 0, 0);
   toDoList.projects.forEach((project) => {
     const expiredTodos = project.todos.filter((todo) => {
       return today > new Date(todo.dueDate);
@@ -11,7 +12,7 @@ export function checkDates() {
     });
     expiredTodos.forEach((todo) => {
       // Check that todo is defined and has a priority property
-      toDoList.addActivityLog(todo, today.toLocaleString(), `expired`);
+      toDoList.addActivityLog(todo, todo.dueDate.toLocaleString(), `expired`);
     });
   });
 }

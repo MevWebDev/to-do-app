@@ -4,7 +4,7 @@ import { generateTodos } from "./generateTodos";
 import { deleteProject } from "./projectManagement";
 import { generateNavbar } from "./generateNavbar";
 const addTodoButton = document.querySelector(".add-todo");
-console.log(addTodoButton);
+
 export function generateProjects() {
   const projectsDiv = document.querySelector("#projects");
   projectsDiv.innerHTML = "";

@@ -8,9 +8,11 @@ import { generateTodos } from "./generateTodos.js";
 import { loadStorage, saveData } from "./webstorage.js";
 import { generateProjects } from "./generateProjects.js";
 import { generateActivityLog } from "./activitylog.js";
+import { checkDates } from "./checkDates.js";
 export const toDoList = new ToDoList();
 
 loadStorage();
+checkDates();
 generateNavbar(toDoList);
 generateProjects(toDoList);
 export const state = {

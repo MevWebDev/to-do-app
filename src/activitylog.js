@@ -61,7 +61,13 @@ function generateActivities() {
     const activityDiv = document.createElement("div");
     activityDiv.style.border = `3px solid ${borderColor}`;
     activityDiv.classList = "activity";
-    activityDiv.innerHTML = `<h3>Finished todo:</h3> ${activity[0].title}`;
+
+    if (activity[2] == "finished") {
+      activityDiv.innerHTML = `<h3>Finished todo:</h3> ${activity[0].title}`;
+    } else if (activity[2] == "expired") {
+      activityDiv.innerHTML = `<h3>Expired todo:</h3> ${activity[0].title}`;
+    }
+
     const dateDiv = document.createElement("div");
     dateDiv.innerHTML = `<h4>on</h4> ${activity[1]}`;
     activityDiv.appendChild(dateDiv);
